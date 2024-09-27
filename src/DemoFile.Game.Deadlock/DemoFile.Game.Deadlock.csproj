@@ -28,6 +28,7 @@
     <Protobuf Include="Protobufs/citadel_clientmessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/citadel_gameevents.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/citadel_gcmessages_common.proto" ProtoRoot="Protobufs" />
+    <Protobuf Include="Protobufs/citadel_gcmessages_client.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/citadel_usermessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/gcsdk_gcmessages.proto" ProtoRoot="Protobufs" />
     <Protobuf Include="Protobufs/steammessages_steamlearn.steamworkssdk.proto" ProtoRoot="Protobufs" GrpcServices="None" />

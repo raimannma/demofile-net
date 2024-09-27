@@ -27473,6 +27473,13 @@
       "fields": [
       ]
     },
+    "CCitadel_Ability_Mirage_Teleport": {
+      "parent": "CCitadelBaseAbility",
+      "metadata": [
+      ],
+      "fields": [
+      ]
+    },
     "CCitadel_Modifier_MetalSkin": {
       "parent": "CCitadelModifier",
       "metadata": [

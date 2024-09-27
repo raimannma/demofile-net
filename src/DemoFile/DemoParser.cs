@@ -1,5 +1,6 @@
 ﻿using System.Buffers;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace DemoFile;
 
@@ -55,11 +56,16 @@ public abstract partial class DemoParser<TGameParser>
     /// During reading, seeking (e.g. with <see cref="DemoFileReader{TGameParser}.SeekToTickAsync"/>) is not possible.
     /// </summary>
     public bool IsReading { get; private set; }
-
+    
+    [JsonIgnore]
     public ref DemoEvents DemoEvents => ref _demoEvents;
+    [JsonIgnore]
     public ref BaseGameEvents BaseGameEvents => ref _baseGameEvents;
+    [JsonIgnore]
     public ref PacketEvents PacketEvents => ref _packetEvents;
+    [JsonIgnore]
     public ref BaseUserMessageEvents BaseUserMessageEvents => ref _baseUserMessageEvents;
+    [JsonIgnore]
     public ref TempEntityEvents TempEntityEvents => ref _tempEntityEvents;
 
     public CDemoFileHeader FileHeader { get; private set; } = new();

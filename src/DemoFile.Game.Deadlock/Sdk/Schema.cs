@@ -6085,6 +6085,44 @@ public partial class CCitadel_Ability_Afterburn : CCitadelBaseAbility
     }
 }
 
+public partial class CCitadel_Ability_Mirage_Teleport : CCitadelBaseAbility
+{
+    internal CCitadel_Ability_Mirage_Teleport(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
+
+    internal new static SendNodeDecoder<CCitadel_Ability_Mirage_Teleport> CreateFieldDecoder(SerializableField field, DecoderSet decoderSet)
+    {
+        return CCitadelBaseAbility.CreateFieldDecoder(field, decoderSet);
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireCreateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Mirage_Teleport.Create?.Invoke(this);
+        base.FireCreateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FireDeleteEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Mirage_Teleport.Delete?.Invoke(this);
+        base.FireDeleteEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePreUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Mirage_Teleport.PreUpdate?.Invoke(this);
+        base.FirePreUpdateEvent();
+    }
+
+    [EditorBrowsable(EditorBrowsableState.Advanced)]
+    public override void FirePostUpdateEvent()
+    {
+        Demo.EntityEvents.CCitadel_Ability_Mirage_Teleport.PostUpdate?.Invoke(this);
+        base.FirePostUpdateEvent();
+    }
+}
+
 public partial class CCitadel_Ability_Astro_Rifle : CCitadelBaseAbility
 {
     internal CCitadel_Ability_Astro_Rifle(DeadlockDemoParser.EntityContext context, SendNodeDecoder<object> decoder) : base(context, decoder) {}
@@ -43350,6 +43388,30 @@ internal sealed class DeadlockDecoderSet : DecoderSet
             };
             return true;
         }
+        case "CCitadel_Ability_Mirage_Teleport":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Mirage_Teleport>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Mirage_Teleport);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Mirage_Teleport);
+                var @this = Unsafe.As<CCitadel_Ability_Mirage_Teleport>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
+        case "DemoFile.Game.Deadlock.CCitadel_Ability_Mirage_Teleport":
+        {
+            var innerDecoder = GetDecoder<CCitadel_Ability_Mirage_Teleport>(new SerializerKey(className, 0));
+            classType = typeof(CCitadel_Ability_Mirage_Teleport);
+            decoder = (object instance, ReadOnlySpan<int> path, ref BitBuffer buffer) =>
+            {
+                Debug.Assert(instance is CCitadel_Ability_Mirage_Teleport);
+                var @this = Unsafe.As<CCitadel_Ability_Mirage_Teleport>(instance);
+                innerDecoder(@this, path, ref buffer);
+            };
+            return true;
+        }
         case "CCitadel_Ability_Astro_Rifle":
         {
             var innerDecoder = GetDecoder<CCitadel_Ability_Astro_Rifle>(new SerializerKey(className, 0));
@@ -50575,6 +50637,10 @@ internal sealed class DeadlockDecoderSet : DecoderSet
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Afterburn>(CCitadel_Ability_Afterburn.CreateFieldDecoder);
         }
+        if (typeof(T) == typeof(CCitadel_Ability_Mirage_Teleport))
+        {
+            return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Mirage_Teleport>(CCitadel_Ability_Mirage_Teleport.CreateFieldDecoder);
+        }
         if (typeof(T) == typeof(CCitadel_Ability_Astro_Rifle))
         {
             return (SendNodeDecoderFactory<T>)(object)new SendNodeDecoderFactory<CCitadel_Ability_Astro_Rifle>(CCitadel_Ability_Astro_Rifle.CreateFieldDecoder);
@@ -52961,6 +53027,8 @@ internal static class DeadlockEntityFactories
         {"CBreakable", (context, decoder) => new CBreakable(context, decoder)},
         {"CBreakableProp", (context, decoder) => new CBreakableProp(context, decoder)},
         {"CCitadel_Ability_Afterburn", (context, decoder) => new CCitadel_Ability_Afterburn(context, decoder)},
+        {"CCitadel_Ability_Mirage_Teleport", (context, decoder) => new CCitadel_Ability_Mirage_Teleport(context, decoder)},
+        {"DemoFile.Game.Deadlock.CCitadel_Ability_Mirage_Teleport", (context, decoder) => new CCitadel_Ability_Mirage_Teleport(context, decoder)},
         {"CCitadel_Ability_Astro_Rifle", (context, decoder) => new CCitadel_Ability_Astro_Rifle(context, decoder)},
         {"CCitadel_Ability_Astro_Shotgun_Toggle", (context, decoder) => new CCitadel_Ability_Astro_Shotgun_Toggle(context, decoder)},
         {"CCitadel_Ability_BaseHeldItem", (context, decoder) => new CCitadel_Ability_BaseHeldItem(context, decoder)},

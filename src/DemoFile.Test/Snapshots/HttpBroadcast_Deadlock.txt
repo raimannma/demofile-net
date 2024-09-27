@@ -2949,6 +2949,22 @@
         "Channeling": false
       },
       {
+        "Name": "CCitadel_Ability_Mirage_Teleport",
+        "AbilitySlot": "ESlot_ActiveItem_1",
+        "CooldownStart": {
+          "Value": 0
+        },
+        "CooldownEnd": {
+          "Value": 0
+        },
+        "RemainingCharges": 0,
+        "ToggledTime": {
+          "Value": 8.200001
+        },
+        "ToggleState": false,
+        "Channeling": false
+      },
+      {
         "Name": "CCitadel_Ability_FireBomb",
         "AbilitySlot": "ESlot_ActiveItem_3",
         "CooldownStart": {
@@ -6780,6 +6796,22 @@
       },
       {
         "Name": "CCitadel_Ability_Afterburn",
+        "AbilitySlot": "ESlot_ActiveItem_1",
+        "CooldownStart": {
+          "Value": 0
+        },
+        "CooldownEnd": {
+          "Value": 0
+        },
+        "RemainingCharges": 0,
+        "ToggledTime": {
+          "Value": 8.200001
+        },
+        "ToggleState": false,
+        "Channeling": false
+      },
+      {
+        "Name": "CCitadel_Ability_Mirage_Teleport",
         "AbilitySlot": "ESlot_ActiveItem_1",
         "CooldownStart": {
           "Value": 0

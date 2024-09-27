@@ -41,6 +41,7 @@ public struct EntityEvents
     public EntityEvents<CBreakable, DeadlockDemoParser> CBreakable;
     public EntityEvents<CBreakableProp, DeadlockDemoParser> CBreakableProp;
     public EntityEvents<CCitadel_Ability_Afterburn, DeadlockDemoParser> CCitadel_Ability_Afterburn;
+    public EntityEvents<CCitadel_Ability_Mirage_Teleport, DeadlockDemoParser> CCitadel_Ability_Mirage_Teleport;
     public EntityEvents<CCitadel_Ability_Astro_Rifle, DeadlockDemoParser> CCitadel_Ability_Astro_Rifle;
     public EntityEvents<CCitadel_Ability_Astro_Shotgun_Toggle, DeadlockDemoParser> CCitadel_Ability_Astro_Shotgun_Toggle;
     public EntityEvents<CCitadel_Ability_BaseHeldItem, DeadlockDemoParser> CCitadel_Ability_BaseHeldItem;

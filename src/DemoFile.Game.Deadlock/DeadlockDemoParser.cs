@@ -1,4 +1,5 @@
-﻿using DemoFile.Game.Deadlock;
+﻿using System.Text.Json.Serialization;
+using DemoFile.Game.Deadlock;
 using DemoFile.Sdk;
 
 namespace DemoFile;
@@ -20,16 +21,20 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
 
     public Source1GameEvents Source1GameEvents { get; }
 
+    [JsonIgnore]
     public ref UserMessageEvents UserMessageEvents => ref _userMessageEvents;
+    [JsonIgnore]
     public ref EntityEvents EntityEvents => ref _entityEvents;
+    [JsonIgnore]
     public ref GameEvents GameEvents => ref _gameEvents;
-
+    
     /// <summary>
     /// The <see cref="CCitadelTeam"/> entity representing the Spectators.
     /// </summary>
     /// <remarks>
     /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
     /// </remarks>
+    [JsonIgnore]
     public CCitadelTeam TeamSpectator => GetTeam(TeamNumber.Spectator);
 
     /// <summary>
@@ -38,6 +43,7 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
     /// <remarks>
     /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
     /// </remarks>
+    [JsonIgnore]
     public CCitadelTeam TeamAmber => GetTeam(TeamNumber.Amber);
 
     /// <summary>
@@ -46,6 +52,7 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
     /// <remarks>
     /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
     /// </remarks>
+    [JsonIgnore]
     public CCitadelTeam TeamSapphire => GetTeam(TeamNumber.Sapphire);
 
     /// <summary>
@@ -55,11 +62,13 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
     /// <remarks>
     /// IMPORTANT: Do not cache this value - it is unlikely to remain the same throughout the lifetime of the demo!
     /// </remarks>
+    [JsonIgnore]
     public CCitadelGameRules GameRules => GetCachedSingletonEntity(ref _gameRulesHandle).GameRules!;
 
     /// <summary>
     /// All connected players.
     /// </summary>
+    [JsonIgnore]
     public IEnumerable<CCitadelPlayerController> Players
     {
         get
@@ -75,6 +84,7 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
     /// <summary>
     /// All players - including those that have disconnected or are reconnecting.
     /// </summary>
+    [JsonIgnore]
     public IEnumerable<CCitadelPlayerController> PlayersIncludingDisconnected
     {
         get
@@ -87,9 +97,11 @@ public sealed class DeadlockDemoParser : DemoParser<DeadlockDemoParser>
         }
     }
 
+    [JsonIgnore]
     protected override IReadOnlyDictionary<string, EntityFactory<DeadlockDemoParser>> EntityFactories =>
         DeadlockEntityFactories.All;
 
+    [JsonIgnore]
     protected override ref EntityEvents<CEntityInstance<DeadlockDemoParser>, DeadlockDemoParser> EntityInstanceEvents => ref EntityEvents.CEntityInstance;
 
     public static int TickRate => 60;

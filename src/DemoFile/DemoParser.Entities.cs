@@ -24,7 +24,7 @@ public partial class DemoParser<TGameParser>
     internal const int MaxEdicts = 1 << MaxEdictBits;
     internal const int NumEHandleSerialNumberBits = 17;
 
-    protected readonly CEntityInstance<TGameParser>?[] _entities = new CEntityInstance<TGameParser>?[MaxEdicts];
+    public readonly CEntityInstance<TGameParser>?[] _entities = new CEntityInstance<TGameParser>?[MaxEdicts];
     private readonly EntityBaseline[][] _entityBaselines =
     {
         new EntityBaseline[MaxEdicts],

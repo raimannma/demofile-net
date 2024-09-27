@@ -1,4 +1,6 @@
-﻿namespace DemoFile.Sdk;
+﻿using System.Text.Json.Serialization;
+
+namespace DemoFile.Sdk;
 
 public partial class CEntityInstance<TGameParser>
     where TGameParser : DemoParser<TGameParser>, new()
@@ -25,6 +27,7 @@ public partial class CEntityInstance<TGameParser>
     /// </summary>
     public bool IsActive { get; internal set; }
 
+    [JsonIgnore]
     public ServerClass<TGameParser> ServerClass { get; }
     public uint SerialNumber { get; }
 
